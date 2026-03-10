@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* SpiderEV brand theme */
+@theme {
+  --color-primary: rgb(41, 49, 128);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: rgb(76, 175, 69);
+  --color-surface: #f5f5f5;
+  --color-muted: #6b7280;
+  /* ChargeZone-style alternating backgrounds: beige-gray (lighter) + grayish (darker) */
+  --color-bg-beige: #f5f3ef;
+  --color-bg-gray: #e8e4de;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
