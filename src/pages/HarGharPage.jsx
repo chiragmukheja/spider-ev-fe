@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import PageLayout from "../components/layout/PageLayout";
 import { fadeUp, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
-import acImg from "../assets/home/AcCharger.png";
+import acImg from "../assets/home/AcCharger.jpeg";
 import heroBg from "../assets/home/hero-bg.png";
 
 const steps = [

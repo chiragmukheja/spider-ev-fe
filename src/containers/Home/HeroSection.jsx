@@ -1,41 +1,44 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import heroBg from "../../assets/home/hero-bg.png";
-import heroImage1 from "../../assets/home/heroImage1.png";
+import heroImage1 from "../../assets/home/heroImage1.jpeg";
+import heroImage2 from "../../assets/home/heroImage2.jpeg";
+import heroImage3 from "../../assets/home/heroImage3.jpeg";
+
 
 const AUTO_SLIDE_INTERVAL_MS = 8000;
 
 const heroSlides = [
   {
-    preTitle: "Spider EV ke saath ab",
-    accent: "#POWER",
-    title: "YOUR FUTURE",
-    subtitlePrefix: "Increase",
-    subtitleAccent: "Revenue",
-    subtitleSuffix: "with EV Charging Point",
+    preTitle: "Powering India's EV Revolution",
+    accent: "#LEAD",
+    title: "THE CHARGE",
+    subtitlePrefix: "Ultra-Fast",
+    subtitleAccent: "EV Charging Infrastructure",
+    subtitleSuffix: "for Businesses That Want to Lead the Future",
     cta: "Partner With Us",
-    imageLabel: "Hero Image 1"
+    image: heroImage1,
   },
   {
-    preTitle: "Charging network ka naya era",
-    accent: "#SCALE",
-    title: "YOUR BUSINESS",
-    subtitlePrefix: "Build",
-    subtitleAccent: "Growth",
-    subtitleSuffix: "with smart charging stations",
+    preTitle: "",
+    accent: "#AglaLeader",
+    title: "Spider",
+    subtitlePrefix: "India's",
+    subtitleAccent: "Fastest Growing",
+    subtitleSuffix: "EV Charging Infrastructure Network",
     cta: "Explore Solutions",
-    imageLabel: "Hero Image 2"
+    image: heroImage2,
   },
   {
     preTitle: "Future-ready infrastructure",
-    accent: "#ELECTRIFY",
-    title: "YOUR CITY",
-    subtitlePrefix: "Deliver",
-    subtitleAccent: "Impact",
-    subtitleSuffix: "with reliable EV charging",
+    accent: "#SwitchTo",
+    title: "SPIDER",
+    subtitlePrefix: "Be Part of",
+    subtitleAccent: "India's",
+    subtitleSuffix: "Rapidly Expanding EV Charging Network.",
     cta: "Get Started",
-    imageLabel: "Hero Image 3"
-  }
+    image: heroImage3,
+  },
 ];
 
 const HeroSection = () => {
@@ -77,9 +80,9 @@ const HeroSection = () => {
           >
             <div className="relative z-10">
               <img
-                src={heroImage1}
+                src={activeSlide.image}
                 alt="Spider EV Hero"
-                className="w-full aspect-[4/3] object-contain rounded-2xl"
+                className="w-full aspect-[4/3] object-cover rounded-3xl"
               />
             </div>
           </motion.div>

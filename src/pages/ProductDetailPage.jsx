@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import PageLayout from "../components/layout/PageLayout";
 import AppDownloadCTA from "../components/ui/AppDownloadCTA";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
-import acImg from "../assets/home/AcCharger.png";
+import acImg from "../assets/home/AcCharger.jpeg";
 import dcImg from "../assets/home/DcCharger.png";
 import heroBg from "../assets/home/hero-bg.png";
 

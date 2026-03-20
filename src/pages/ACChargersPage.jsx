@@ -5,7 +5,7 @@ import HeroBanner from "../components/ui/HeroBanner";
 import Accordion from "../components/ui/Accordion";
 import AppDownloadCTA from "../components/ui/AppDownloadCTA";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
-import acChargerImg from "../assets/home/AcCharger.png";
+import acChargerImg from "../assets/home/AcCharger.jpeg";
 
 const acProducts = [
   { id: "spider-mini", name: "Spider Mini", power: "3.3 kW", compatible: "2 & 3 Wheelers", ocpp: false },
