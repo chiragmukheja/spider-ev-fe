@@ -13,7 +13,7 @@ const HeroBanner = ({ title, subtitle, bgImage }) => {
       }}
     >
       <div className="absolute inset-0 bg-primary/80" />
-      <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
+      <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
         <motion.h1
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}

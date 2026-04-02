@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import heroBg from "../../assets/home/hero-bg.png";
 import heroImage1 from "../../assets/home/heroImage1.jpeg";
 import heroImage2 from "../../assets/home/heroImage2.jpeg";
@@ -17,6 +18,7 @@ const heroSlides = [
     subtitleAccent: "EV Charging Infrastructure",
     subtitleSuffix: "for Businesses That Want to Lead the Future",
     cta: "Partner With Us",
+    ctaHref: "/partner-withus",
     image: heroImage1,
   },
   {
@@ -27,6 +29,7 @@ const heroSlides = [
     subtitleAccent: "Fastest Growing",
     subtitleSuffix: "EV Charging Infrastructure Network",
     cta: "Explore Solutions",
+    ctaHref: "/solutions/park-and-charge",
     image: heroImage2,
   },
   {
@@ -37,6 +40,7 @@ const heroSlides = [
     subtitleAccent: "India's",
     subtitleSuffix: "Rapidly Expanding EV Charging Network.",
     cta: "Get Started",
+    ctaHref: "/company/contact",
     image: heroImage3,
   },
 ];
@@ -68,8 +72,8 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20"></div>
       </div>
 
-      <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 py-20 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center min-h-[80vh]">
+      <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10 py-20 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center min-h-screen lg:min-h-[80vh]">
           {/* Left Side - Hero Image (Carousel) */}
           <motion.div
             key={`hero-image-${currentSlide}`}
@@ -137,9 +141,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="mt-8"
             >
-              <button className="bg-white text-primary px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+              <Link
+                to={activeSlide.ctaHref}
+                className="inline-block bg-white text-primary px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+              >
                 {activeSlide.cta}
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

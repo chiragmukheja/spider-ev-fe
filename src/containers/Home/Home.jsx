@@ -6,8 +6,9 @@ import ChargersSection from "./ChargersSection";
 import ChargingSolutionsSection from "./ChargingSolutionsSection";
 import BrandsSection from "./BrandsSection";
 import AppSection from "./AppSection";
-import NewsSection from "./NewsSection";
+import BessSection from "./BessSection";
 import Footer from "../../components/layout/Footer";
+import WhatsAppFloat from "../../components/ui/WhatsAppFloat";
 
 const Home = () => {
   return (
@@ -19,8 +20,9 @@ const Home = () => {
       <ChargingSolutionsSection />
       <BrandsSection />
       <AppSection />
-      <NewsSection />
+      <BessSection />
       <Footer />
+      <WhatsAppFloat />
     </PageContainer>
   );
 };

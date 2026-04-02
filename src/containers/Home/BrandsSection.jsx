@@ -19,7 +19,7 @@ const marqueeBrands = [...partnerBrands, ...partnerBrands];
 const BrandsSection = () => {
   return (
     <section className="w-full bg-[#F3F5F8] py-12 lg:py-16 min-h-[30vh] flex items-center">
-      <div className="w-full max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="w-full max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
         <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-semibold text-secondary leading-tight max-w-5xl mx-auto">
           Our EV Charging Solutions are the preferred choice of industry leaders
         </h2>

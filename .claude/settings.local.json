@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:xbattery.energy)",
+      "WebFetch(domain:www.thunderplus.io)",
+      "WebFetch(domain:www.chargezone.co.in)"
+    ]
+  }
+}

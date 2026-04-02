@@ -41,7 +41,7 @@ const StatsSection = () => {
 
   return (
     <section ref={ref} className="w-full bg-[#F3F5F8]">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 py-16 lg:py-20">
+      <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10 py-16 lg:py-20">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -76,7 +76,7 @@ const StatsSection = () => {
       </div>
 
       <div className="bg-primary">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 py-16 lg:py-20">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10 py-16 lg:py-20">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -104,7 +104,7 @@ const StatsSection = () => {
                 >
                   {stat.number}
                 </motion.div>
-                <p className="mt-3 text-white text-base sm:text-lg lg:text-xl leading-snug font-semibold max-w-xs mx-auto">
+                <p className="mt-3 text-white text-sm sm:text-base lg:text-lg leading-snug font-semibold max-w-xs mx-auto">
                   {stat.label}
                 </p>
               </motion.div>

@@ -138,7 +138,7 @@ const ChargingSolutionsSection = () => {
 
   return (
     <section className="w-full bg-[#252E89] py-16 lg:py-20 overflow-hidden">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between gap-4 mb-10 lg:mb-12">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">
             Charging Solutions
@@ -185,7 +185,7 @@ const ChargingSolutionsSection = () => {
                 className="px-3 shrink-0"
                 style={{ width: `${cardWidth}px` }}
               >
-                <div className="relative rounded-3xl overflow-hidden min-h-[280px] lg:min-h-[360px] group">
+                <div className="relative rounded-3xl overflow-hidden min-h-60 sm:min-h-70 lg:min-h-90 group">
                   <img
                     src={slide.imageUrl}
                     alt={slide.title}

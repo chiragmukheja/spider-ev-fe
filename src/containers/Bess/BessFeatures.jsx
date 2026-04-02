@@ -6,14 +6,10 @@ import heroBg from "../../assets/home/hero-bg.png";
 const BessFeatures = () => (
   <section
     className="relative overflow-hidden py-16 sm:py-20"
-    style={{
-      backgroundImage: `url(${heroBg})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
+    style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
   >
     <div className="absolute inset-0 bg-primary/85" />
-    <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+    <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -22,11 +18,10 @@ const BessFeatures = () => (
         className="text-center mb-12"
       >
         <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold text-white">
-          Built for India.{" "}
-          <span className="text-secondary">Built to Last.</span>
+          Built for India. <span className="text-secondary">Built to Last.</span>
         </motion.h2>
         <motion.p variants={fadeUp} className="text-white/70 mt-3 max-w-xl mx-auto">
-          Every Spider BESS unit is engineered with features that matter most in real Indian conditions.
+          Every SpiderVault unit is engineered with features that matter most in real Indian conditions.
         </motion.p>
       </motion.div>
 
@@ -35,7 +30,7 @@ const BessFeatures = () => (
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-4"
+        className="grid grid-cols-2 md:grid-cols-4 gap-4"
       >
         {bessFeatures.map((f) => (
           <motion.div

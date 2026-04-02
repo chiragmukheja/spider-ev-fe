@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PageContainer from "./PageContainer";
+import WhatsAppFloat from "../ui/WhatsAppFloat";
 
 const PageLayout = ({ children }) => {
   return (
@@ -8,6 +9,7 @@ const PageLayout = ({ children }) => {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <WhatsAppFloat />
     </PageContainer>
   );
 };

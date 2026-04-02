@@ -32,7 +32,7 @@ const PublicChargingPage = () => {
 
       {/* Intro */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={staggerContainer}
@@ -70,7 +70,7 @@ const PublicChargingPage = () => {
 
       {/* Use Cases */}
       <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -105,7 +105,7 @@ const PublicChargingPage = () => {
 
       {/* CPMS Integration */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={fadeLeft}

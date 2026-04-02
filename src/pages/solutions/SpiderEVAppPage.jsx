@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
+import AppStoreButtons from "../../components/ui/AppStoreButtons";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../../utils/animationConfig";
 import appImg from "../../assets/home/SpiderApp.jpg";
 import heroBg from "../../assets/home/hero-bg.png";
@@ -28,7 +29,7 @@ const SpiderEVAppPage = () => {
 
       {/* App Intro */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={staggerContainer}
@@ -49,19 +50,8 @@ const SpiderEVAppPage = () => {
                 Available in 9 regional languages, with support for all major payment methods and
                 every EV type — SpiderEV App is built for Bharat.
               </motion.p>
-              <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
-                <a href="#" className="flex items-center gap-2 bg-primary text-white px-6 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3.18 23.76c.33.18.72.18 1.06.01l11.37-6.57-2.46-2.46-9.97 9.02zM.5 1.4C.19 1.76 0 2.27 0 2.93v18.14c0 .66.19 1.17.5 1.53l.08.08 10.16-10.16v-.24L.58 1.32.5 1.4zM19.43 10.23l-2.82-1.63-2.76 2.76 2.76 2.76 2.84-1.64c.81-.47.81-1.23-.02-1.25zM4.24.24L15.61 6.8l-2.46 2.46L3.18.24C3.52.06 3.91.06 4.24.24z"/>
-                  </svg>
-                  Google Play
-                </a>
-                <a href="#" className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3.5 rounded-xl font-semibold hover:bg-gray-800 transition-colors">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.22 1.3-2.2 3.88.03 3.06 2.69 4.08 2.72 4.1l-.07.24zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                  </svg>
-                  App Store
-                </a>
+              <motion.div variants={fadeUp} className="mt-8">
+                <AppStoreButtons />
               </motion.div>
             </motion.div>
             <motion.div
@@ -79,7 +69,7 @@ const SpiderEVAppPage = () => {
 
       {/* Features Grid */}
       <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -117,7 +107,7 @@ const SpiderEVAppPage = () => {
       {/* Download CTA */}
       <section className="relative overflow-hidden py-16 sm:py-20 text-center" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />
-        <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -128,18 +118,8 @@ const SpiderEVAppPage = () => {
             <motion.p variants={fadeUp} className="text-white/70 mb-10 max-w-xl mx-auto">
               Join thousands of EV drivers across India who charge smarter with the SpiderEV app.
             </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-4 justify-center">
-              {[
-                { label: "Google Play", sub: "Get it on" },
-                { label: "App Store", sub: "Download on the" },
-              ].map((btn) => (
-                <a key={btn.label} href="#" className="flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition-colors">
-                  <div className="text-left">
-                    <div className="text-xs text-gray-500">{btn.sub}</div>
-                    <div className="font-bold">{btn.label}</div>
-                  </div>
-                </a>
-              ))}
+            <motion.div variants={fadeUp} className="flex justify-center">
+              <AppStoreButtons />
             </motion.div>
           </motion.div>
         </div>

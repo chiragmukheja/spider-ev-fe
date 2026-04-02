@@ -47,7 +47,7 @@ const CommunityChargingPage = () => {
 
       {/* Intro */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={fadeLeft}
@@ -85,7 +85,7 @@ const CommunityChargingPage = () => {
 
       {/* 3 Pillars */}
       <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -125,7 +125,7 @@ const CommunityChargingPage = () => {
       {/* Sustainability */}
       <section className="relative overflow-hidden py-16 sm:py-20" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />
-        <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10 text-center">
           <motion.div
             variants={staggerContainer}
             initial="hidden"

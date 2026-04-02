@@ -21,7 +21,7 @@ const HarGharPage = () => {
       <section className="relative overflow-hidden py-24 sm:py-32" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent" />
-        <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10 text-center">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -46,7 +46,7 @@ const HarGharPage = () => {
 
       {/* What is SpiderAtHome */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={staggerContainer}
@@ -70,7 +70,7 @@ const HarGharPage = () => {
               </motion.p>
               <motion.div
                 variants={staggerFast}
-                className="mt-8 grid grid-cols-3 gap-4"
+                className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4"
               >
                 {[
                   { num: "₹8K", label: "Min Investment" },
@@ -106,7 +106,7 @@ const HarGharPage = () => {
 
       {/* How It Works */}
       <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -144,7 +144,7 @@ const HarGharPage = () => {
 
       {/* Who Can Apply */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10 text-center">
           <motion.div
             variants={staggerContainer}
             initial="hidden"

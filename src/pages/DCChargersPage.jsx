@@ -4,16 +4,23 @@ import PageLayout from "../components/layout/PageLayout";
 import HeroBanner from "../components/ui/HeroBanner";
 import Accordion from "../components/ui/Accordion";
 import SpiderConnectCTA from "../components/ui/SpiderConnectCTA";
-import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
+import { fadeUp, fadeLeft, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
 import dcChargerImg from "../assets/home/DcCharger.png";
+import tejImg from "../assets/chargers/tej.png";
+import sparkDcImg from "../assets/chargers/spark-dc.png";
+
+const cardImages = {
+  "spider-base":  tejImg,
+  "spider-spark": sparkDcImg,
+};
 
 const dcProducts = [
-  { id: "spider-base", name: "Spider Base", power: "3–12 kW", compatible: "2 & 3 Wheelers", ocpp: true },
-  { id: "spider-spark", name: "Spider Spark", power: "15 kW", compatible: "4 Wheelers", ocpp: true },
-  { id: "spider-fast", name: "Spider Fast", power: "30 kW", compatible: "4 Wheelers", ocpp: true },
-  { id: "spider-falcon", name: "Spider Falcon", power: "60 kW", compatible: "4 Wheelers", ocpp: true },
-  { id: "spider-hulk", name: "Spider Hulk", power: "120 kW", compatible: "4 Wheelers / Bus / Truck", ocpp: true },
-  { id: "spider-ultra", name: "Spider Ultra", power: "240 kW", compatible: "4 Wheelers / Bus / Truck", ocpp: true },
+  { id: "spider-base",   name: "Spider Base",   power: "3 – 12 kW", connector: "Type 6 (IS 17017-2-6)", outputVoltage: "20 – 120 V DC",   outputCurrent: "0 – 100 A" },
+  { id: "spider-spark",  name: "Spider Spark",  power: "15 kW",     connector: "GB/T",                  outputVoltage: "40 – 200 V DC",   outputCurrent: "0 – 200 A" },
+  { id: "spider-fast",   name: "Spider Fast",   power: "30 kW",     connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 100 A" },
+  { id: "spider-falcon", name: "Spider Falcon", power: "60 kW",     connector: "CCS2",                  outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 100 A" },
+  { id: "spider-hulk",   name: "Spider Hulk",   power: "120 kW",    connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 200 A" },
+  { id: "spider-ultra",  name: "Spider Ultra",  power: "240 kW",    connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 250 A" },
 ];
 
 const faqItems = [
@@ -31,35 +38,48 @@ const faqItems = [
   },
 ];
 
-const ProductCard = ({ product }) => (
-  <motion.div
-    variants={fadeUp}
-    whileHover={{ y: -6, transition: { duration: 0.2 } }}
-    className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col"
-  >
-    <div className="bg-gray-50 p-8 flex items-center justify-center h-52">
-      <img src={dcChargerImg} alt={product.name} className="h-full object-contain" />
-    </div>
-    <div className="p-6 flex flex-col flex-1">
-      <div className="flex items-start justify-between gap-2 mb-3">
-        <h3 className="text-xl font-bold text-gray-900">{product.name}</h3>
-        <div className="flex flex-col gap-1 items-end">
-          <span className="bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full">{product.power}</span>
-          {product.ocpp && <span className="bg-secondary text-white text-xs font-semibold px-2.5 py-1 rounded-full">OCPP</span>}
+const ProductCard = ({ product }) => {
+  const img = cardImages[product.id] ?? dcChargerImg;
+  return (
+    <motion.div
+      variants={fadeUp}
+      whileHover={{ y: -6, transition: { duration: 0.2 } }}
+      className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col"
+    >
+      <div className="bg-gray-50 p-5 sm:p-8 flex items-center justify-center h-40 sm:h-52">
+        <img src={img} alt={product.name} className="h-full object-contain" />
+      </div>
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-start justify-between gap-2 mb-4">
+          <h3 className="text-xl font-bold text-gray-900">{product.name}</h3>
+          <span className="bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full shrink-0">{product.power}</span>
+        </div>
+        <div className="flex flex-col gap-1.5 mb-4">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+            {product.connector}
+          </div>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+            {product.outputVoltage} · {product.outputCurrent}
+          </div>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+            OCPP 1.6J · IP67 · All-Weather Rated
+          </div>
+        </div>
+        <div className="mt-auto">
+          <Link
+            to={`/products/dc/${product.id}`}
+            className="block w-full text-center border-2 border-primary text-primary px-4 py-2.5 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors text-sm"
+          >
+            Know More
+          </Link>
         </div>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Compatible: {product.compatible}</p>
-      <div className="mt-auto">
-        <Link
-          to={`/products/dc/${product.id}`}
-          className="block w-full text-center border-2 border-primary text-primary px-4 py-2.5 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors text-sm"
-        >
-          Know More
-        </Link>
-      </div>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 const DCChargersPage = () => {
   return (
@@ -72,7 +92,7 @@ const DCChargersPage = () => {
 
       {/* Intro */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={fadeLeft}
@@ -109,7 +129,7 @@ const DCChargersPage = () => {
 
       {/* Product Grid */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -136,7 +156,7 @@ const DCChargersPage = () => {
 
       {/* FAQ */}
       <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="max-w-3xl mx-auto">
             <motion.h2
               variants={fadeUp}

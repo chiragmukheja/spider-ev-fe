@@ -42,7 +42,7 @@ const stats = [
 const ChargersSection = () => {
   return (
     <section className="w-full bg-[#EEF1F6] py-16 lg:py-20">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -93,6 +93,7 @@ const ChargersSection = () => {
                           viewBox="0 0 20 20"
                           fill="none"
                           className="w-5 h-5"
+                          
                         >
                           <circle cx="10" cy="10" r="10" fill="#4CAF45" fillOpacity="0.12" />
                           <path

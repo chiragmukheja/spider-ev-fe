@@ -5,7 +5,7 @@ import spiderConnectImg from "../../assets/home/SpiderConnect.jpg";
 
 const SpiderConnectCTA = () => (
   <section className="bg-gray-50 py-16 sm:py-20">
-    <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+    <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           variants={fadeLeft}

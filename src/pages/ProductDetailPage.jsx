@@ -6,113 +6,309 @@ import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, vi
 import acImg from "../assets/home/AcCharger.jpeg";
 import dcImg from "../assets/home/DcCharger.png";
 import heroBg from "../assets/home/hero-bg.png";
+import tejImg from "../assets/chargers/tej.png";
+import sparkDcImg from "../assets/chargers/spark-dc.png";
+
+// Per-product image overrides (DC only; AC all use acImg)
+const productImages = {
+  "spider-base":  tejImg,
+  "spider-spark": sparkDcImg,
+};
 
 const productData = {
   ac: {
     "spider-mini": {
-      name: "Spider Mini", tagline: "Compact and reliable home charging for 2 & 3 wheelers",
-      power: "3.3 kW", connector: "Bharat AC-001 / Type 1", inputVoltage: "230V AC, Single Phase",
-      outputCurrent: "16A", ipRating: "IP54", certifications: "BIS Certified", ocpp: "Not Applicable",
-      features: ["Plug & Play", "Compact Design", "LED Status Indicator", "Overload Protection", "Short Circuit Protection", "Thermal Protection"],
-      compatible: ["2 Wheelers", "3 Wheelers"],
+      name: "Spider Mini",
+      tagline: "Compact single-phase AC charger built for all-weather home use",
+      power: "3.3 kW",
+      connector: "IEC 60309 Socket (Heavy Duty)",
+      inputVoltage: "180 – 300 V AC, Single Phase",
+      operatingVoltage: "220 – 240 V AC",
+      outputCurrent: "16 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-lite": {
-      name: "Spider Lite", tagline: "Maximum functionality meets aesthetic design",
-      power: "3.3 kW", connector: "Bharat AC-001 / Type 1", inputVoltage: "230V AC, Single Phase",
-      outputCurrent: "16A", ipRating: "IP54", certifications: "BIS Certified", ocpp: "OCPP 1.6J",
-      features: ["Smart Connectivity", "RFID Auth", "LCD Display", "Energy Metering", "Overload Protection", "Remote Monitoring"],
-      compatible: ["2 Wheelers", "3 Wheelers"],
+      name: "Spider Lite",
+      tagline: "Smart single-phase charger with free installation and app monitoring",
+      power: "3.3 kW",
+      connector: "IEC 60309 Socket (Heavy Duty)",
+      inputVoltage: "180 – 300 V AC, Single Phase",
+      operatingVoltage: "220 – 240 V AC",
+      outputCurrent: "16 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-smart": {
-      name: "Spider Smart", tagline: "Smart home charging for 4-wheelers",
-      power: "7.4 kW", connector: "Type 2 (IEC 62196)", inputVoltage: "230V AC, Single Phase",
-      outputCurrent: "32A", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 1.6J",
-      features: ["Smart App Control", "RFID Auth", "Energy Metering", "Dynamic Load Management", "Overload Protection", "Remote Monitoring"],
-      compatible: ["4 Wheelers"],
+      name: "Spider Smart",
+      tagline: "7.4 kW Type 2 charger with smart app control and dynamic load management",
+      power: "7.4 kW",
+      connector: "Type 2 (IEC 62196)",
+      inputVoltage: "210 – 280 V AC, Single Phase",
+      operatingVoltage: "220 – 260 V AC",
+      outputCurrent: "32 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-blaze": {
-      name: "Spider Blaze", tagline: "High-power AC charging for fleets and commercial spaces",
-      power: "22 kW", connector: "Type 2 (IEC 62196)", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "32A", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 1.6J / 2.0",
-      features: ["Three-Phase Charging", "RFID Auth", "Energy Metering", "Load Balancing", "Remote Management", "Fleet Ready"],
-      compatible: ["4 Wheelers", "Bus", "Truck"],
+      name: "Spider Blaze",
+      tagline: "22 kW three-phase AC charger for fleets and commercial installations",
+      power: "22 kW",
+      connector: "Type 2 (IEC 62196)",
+      inputVoltage: "400 – 460 V AC, Three Phase",
+      operatingVoltage: "410 – 450 V AC",
+      outputCurrent: "32 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-strike": {
-      name: "Spider Strike", tagline: "High-power AC solution for commercial fleets",
-      power: "40 kW", connector: "Type 2 (IEC 62196)", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "63A", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 1.6J / 2.0",
-      features: ["High Power Output", "RFID Auth", "Dynamic Load Management", "Remote Monitoring", "Fleet Management", "Payment Integration"],
-      compatible: ["4 Wheelers", "Bus", "Truck"],
+      name: "Spider Strike",
+      tagline: "40 kW high-power three-phase AC charger for commercial fleets",
+      power: "40 kW",
+      connector: "Type 2 (IEC 62196)",
+      inputVoltage: "400 – 460 V AC, Three Phase",
+      operatingVoltage: "410 – 450 V AC",
+      outputCurrent: "55 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-dash": {
-      name: "Spider Dash", tagline: "Ultra-high power AC charging for heavy commercial vehicles",
-      power: "80 kW", connector: "Type 2 (IEC 62196)", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "125A", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 2.0",
-      features: ["Ultra High Power", "Multi-Gun Support", "Advanced Load Management", "Remote Diagnostics", "Fleet Ready", "Payment Integration"],
-      compatible: ["4 Wheelers", "Bus", "Truck"],
+      name: "Spider Dash",
+      tagline: "80 kW dual-gun three-phase AC charger for high-throughput commercial sites",
+      power: "80 kW",
+      connector: "Type 2 (IEC 62196)",
+      inputVoltage: "400 – 460 V AC, Three Phase",
+      operatingVoltage: "410 – 450 V AC",
+      outputCurrent: "55 A per Gun",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
   },
   dc: {
     "spider-base": {
-      name: "Spider Base", tagline: "Entry-level DC fast charger for 2 & 3 wheelers",
-      power: "3–12 kW", connector: "Bharat DC-001", inputVoltage: "230V AC / 415V AC",
-      outputCurrent: "Up to 50A DC", ipRating: "IP54", certifications: "BIS Certified", ocpp: "OCPP 1.6J",
-      features: ["DC Fast Charging", "RFID Auth", "LED Indicator", "Auto-Cutoff", "Overload Protection", "Remote Monitoring"],
-      compatible: ["2 Wheelers", "3 Wheelers"],
+      name: "Spider Base",
+      tagline: "3–12 kW modular DC charger with IS 17017-2-6 connector for light EVs",
+      power: "3 – 12 kW",
+      connector: "Type 6 (IS 17017-2-6)",
+      inputVoltage: "230 V AC, Single Phase",
+      operatingVoltage: "—",
+      outputVoltage: "20 – 120 V DC",
+      outputCurrent: "0 – 100 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-spark": {
-      name: "Spider Spark", tagline: "Reliable DC fast charging for personal EVs",
-      power: "15 kW", connector: "CCS2 / CHAdeMO", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "Up to 37.5A DC", ipRating: "IP54", certifications: "BIS, CE Certified", ocpp: "OCPP 1.6J",
-      features: ["DC Fast Charging", "Dual Connector", "RFID Auth", "Touch Screen", "Energy Metering", "Remote Management"],
-      compatible: ["4 Wheelers"],
+      name: "Spider Spark",
+      tagline: "15 kW DC fast charger with GB/T connector and wide output voltage range",
+      power: "15 kW",
+      connector: "GB/T",
+      inputVoltage: "415 V AC, Three Phase",
+      operatingVoltage: "—",
+      outputVoltage: "40 – 200 V DC",
+      outputCurrent: "0 – 200 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-fast": {
-      name: "Spider Fast", tagline: "30 kW rapid charging for commercial locations",
-      power: "30 kW", connector: "CCS2 / CHAdeMO", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "Up to 75A DC", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 1.6J / 2.0",
-      features: ["Rapid Charging", "Dual Gun", "RFID / App Auth", "7-inch Display", "Payment Gateway", "Remote Monitoring"],
-      compatible: ["4 Wheelers"],
+      name: "Spider Fast",
+      tagline: "30 kW rapid DC charger with CCS2 / CHAdeMO for 4-wheeler public charging",
+      power: "30 kW",
+      connector: "CCS2 / CHAdeMO",
+      inputVoltage: "415 V AC, Three Phase",
+      operatingVoltage: "—",
+      outputVoltage: "200 – 1000 V DC",
+      outputCurrent: "0 – 100 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-falcon": {
-      name: "Spider Falcon", tagline: "High-speed 60 kW DC charging for public networks",
-      power: "60 kW", connector: "CCS2 / CHAdeMO", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "Up to 150A DC", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 2.0",
-      features: ["High Power DC", "Multi-Standard Connectors", "7-inch Touch Display", "Payment Integration", "Dynamic Load Management", "Remote Diagnostics"],
-      compatible: ["4 Wheelers"],
+      name: "Spider Falcon",
+      tagline: "60 kW high-speed CCS2 DC charger for public networks and commercial hubs",
+      power: "60 kW",
+      connector: "CCS2",
+      inputVoltage: "415 V AC, Three Phase",
+      operatingVoltage: "—",
+      outputVoltage: "200 – 1000 V DC",
+      outputCurrent: "0 – 100 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-hulk": {
-      name: "Spider Hulk", tagline: "120 kW powerhouse for fleets and highways",
-      power: "120 kW", connector: "CCS2 (Dual Gun)", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "Up to 300A DC", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 2.0",
-      features: ["120 kW Power", "Dual Gun Simultaneous", "10-inch Display", "Fleet Management", "Payment Gateway", "Remote Diagnostics"],
-      compatible: ["4 Wheelers", "Bus", "Truck"],
+      name: "Spider Hulk",
+      tagline: "120 kW powerhouse DC charger for fleets, highways, and heavy vehicles",
+      power: "120 kW",
+      connector: "CCS2 / CHAdeMO",
+      inputVoltage: "415 V AC, Three Phase",
+      operatingVoltage: "—",
+      outputVoltage: "200 – 1000 V DC",
+      outputCurrent: "0 – 200 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
     "spider-ultra": {
-      name: "Spider Ultra", tagline: "240 kW ultra-rapid charger — India's most powerful",
-      power: "240 kW", connector: "CCS2 (Multi-Gun)", inputVoltage: "415V AC, Three Phase",
-      outputCurrent: "Up to 600A DC", ipRating: "IP55", certifications: "BIS, CE Certified", ocpp: "OCPP 2.0",
-      features: ["240 kW Ultra Power", "Multi-Gun 4 Outputs", "15-inch Display", "Fleet & Depot Ready", "Advanced Load Balancing", "SCADA Integration"],
-      compatible: ["4 Wheelers", "Bus", "Truck"],
+      name: "Spider Ultra",
+      tagline: "240 kW ultra-rapid DC charger — the peak of SpiderEV's charging technology",
+      power: "240 kW",
+      connector: "CCS2 / CHAdeMO",
+      inputVoltage: "415 V AC, Three Phase",
+      operatingVoltage: "—",
+      outputVoltage: "200 – 1000 V DC",
+      outputCurrent: "0 – 250 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
     },
   },
 };
 
 const specRows = (product) => [
-  ["Power Output", product.power],
-  ["Connector Type", product.connector],
-  ["Input Voltage", product.inputVoltage],
-  ["Output Current", product.outputCurrent],
-  ["Protection Rating", product.ipRating],
-  ["Certifications", product.certifications],
-  ["OCPP Version", product.ocpp],
-];
+  ["Power Output",       product.power],
+  ["Connector Type",     product.connector],
+  ["Input Voltage",      product.inputVoltage],
+  ["Operating Voltage",  product.operatingVoltage],
+  ...(product.outputVoltage ? [["DC Output Voltage", product.outputVoltage]] : []),
+  ["Output Current",     product.outputCurrent],
+  ["Protection Rating",  product.ipRating],
+  ["Certifications",     product.certifications],
+  ["OCPP Version",       product.ocpp],
+].filter(([, val]) => val && val !== "—");
 
 const ProductDetailPage = () => {
   const { category, productId } = useParams();
   const catData = productData[category];
   const product = catData ? catData[productId] : null;
-  const productImg = category === "ac" ? acImg : dcImg;
+  const productImg = (category === "dc" && productImages[productId]) ? productImages[productId] : (category === "ac" ? acImg : dcImg);
 
   if (!product) {
     return (
@@ -132,7 +328,7 @@ const ProductDetailPage = () => {
       {/* Hero */}
       <section className="relative overflow-hidden py-16 sm:py-24" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />
-        <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={staggerContainer}
@@ -170,7 +366,7 @@ const ProductDetailPage = () => {
 
       {/* Specs + Features */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Specs */}
             <motion.div
@@ -229,32 +425,6 @@ const ProductDetailPage = () => {
                 ))}
               </motion.div>
 
-              <motion.h2
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewport}
-                className="text-2xl font-bold text-gray-900 mt-10 mb-4"
-              >
-                Compatible Vehicles
-              </motion.h2>
-              <motion.div
-                variants={staggerFast}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewport}
-                className="flex flex-wrap gap-3"
-              >
-                {product.compatible.map((v) => (
-                  <motion.span
-                    key={v}
-                    variants={scaleUp}
-                    className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold"
-                  >
-                    {v}
-                  </motion.span>
-                ))}
-              </motion.div>
             </div>
           </div>
         </div>
@@ -268,7 +438,7 @@ const ProductDetailPage = () => {
         viewport={viewport}
         className="py-10 bg-gray-50 text-center"
       >
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <Link
             to={`/products/${category === "ac" ? "ac-chargers" : "dc-chargers"}`}
             className="inline-block border-2 border-primary text-primary px-8 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors"

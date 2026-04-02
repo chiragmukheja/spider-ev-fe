@@ -8,12 +8,12 @@ import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, vi
 import acChargerImg from "../assets/home/AcCharger.jpeg";
 
 const acProducts = [
-  { id: "spider-mini", name: "Spider Mini", power: "3.3 kW", compatible: "2 & 3 Wheelers", ocpp: false },
-  { id: "spider-lite", name: "Spider Lite", power: "3.3 kW", compatible: "2 & 3 Wheelers", ocpp: false },
-  { id: "spider-smart", name: "Spider Smart", power: "7.4 kW", compatible: "4 Wheelers", ocpp: true },
-  { id: "spider-blaze", name: "Spider Blaze", power: "22 kW", compatible: "4 Wheelers / Bus / Truck", ocpp: true },
-  { id: "spider-strike", name: "Spider Strike", power: "40 kW", compatible: "4 Wheelers / Bus / Truck", ocpp: true },
-  { id: "spider-dash", name: "Spider Dash", power: "80 kW", compatible: "4 Wheelers / Bus / Truck", ocpp: true },
+  { id: "spider-mini",   name: "Spider Mini",   power: "3.3 kW", connector: "IEC 60309",  phase: "Single Phase", current: "16 A",      ocpp: true },
+  { id: "spider-lite",   name: "Spider Lite",   power: "3.3 kW", connector: "IEC 60309",  phase: "Single Phase", current: "16 A",      ocpp: true },
+  { id: "spider-smart",  name: "Spider Smart",  power: "7.4 kW", connector: "Type 2",     phase: "Single Phase", current: "32 A",      ocpp: true },
+  { id: "spider-blaze",  name: "Spider Blaze",  power: "22 kW",  connector: "Type 2",     phase: "Three Phase",  current: "32 A",      ocpp: true },
+  { id: "spider-strike", name: "Spider Strike", power: "40 kW",  connector: "Type 2",     phase: "Three Phase",  current: "55 A",      ocpp: true },
+  { id: "spider-dash",   name: "Spider Dash",   power: "80 kW",  connector: "Type 2",     phase: "Three Phase",  current: "55 A/gun",  ocpp: true },
 ];
 
 const faqItems = [
@@ -31,7 +31,7 @@ const faqItems = [
   },
 ];
 
-const ProductCard = ({ product, index }) => (
+const ProductCard = ({ product }) => (
   <motion.div
     variants={fadeUp}
     whileHover={{ y: -6, transition: { duration: 0.2 } }}
@@ -41,14 +41,24 @@ const ProductCard = ({ product, index }) => (
       <img src={acChargerImg} alt={product.name} className="h-full object-contain" />
     </div>
     <div className="p-6 flex flex-col flex-1">
-      <div className="flex items-start justify-between gap-2 mb-3">
+      <div className="flex items-start justify-between gap-2 mb-4">
         <h3 className="text-xl font-bold text-gray-900">{product.name}</h3>
-        <div className="flex flex-col gap-1 items-end">
-          <span className="bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full">{product.power}</span>
-          {product.ocpp && <span className="bg-secondary text-white text-xs font-semibold px-2.5 py-1 rounded-full">OCPP</span>}
+        <span className="bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full shrink-0">{product.power}</span>
+      </div>
+      <div className="flex flex-col gap-1.5 mb-4">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+          {product.connector} · {product.phase}
+        </div>
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+          Output: {product.current}
+        </div>
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+          OCPP · IP67 · All-Weather Rated
         </div>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Compatible: {product.compatible}</p>
       <div className="mt-auto">
         <Link
           to={`/products/ac/${product.id}`}
@@ -72,7 +82,7 @@ const ACChargersPage = () => {
 
       {/* Intro */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={staggerContainer}
@@ -110,7 +120,7 @@ const ACChargersPage = () => {
 
       {/* Product Grid */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -128,8 +138,8 @@ const ACChargersPage = () => {
             viewport={viewport}
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {acProducts.map((product, i) => (
-              <ProductCard key={product.id} product={product} index={i} />
+            {acProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </motion.div>
         </div>
@@ -137,7 +147,7 @@ const ACChargersPage = () => {
 
       {/* FAQ */}
       <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="max-w-3xl mx-auto">
             <motion.h2
               variants={fadeUp}

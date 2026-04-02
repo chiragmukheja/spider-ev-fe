@@ -112,7 +112,7 @@ const ROIPage = () => {
                     <button
                       key={i}
                       onClick={() => setChargerIdx(i)}
-                      className={`p-3 rounded-xl border-2 text-sm font-semibold transition-colors text-left ${chargerIdx === i ? "border-primary bg-primary/5 text-primary" : "border-gray-200 text-gray-600 hover:border-primary/50"}`}
+                      className={`p-3 rounded-xl border-2 text-xs sm:text-sm font-semibold transition-colors text-left ${chargerIdx === i ? "border-primary bg-primary/5 text-primary" : "border-gray-200 text-gray-600 hover:border-primary/50"}`}
                     >
                       <div>{c.label}</div>
                       <div className="text-xs font-normal text-gray-400 mt-0.5">Total: {fmt(c.totalCost)}</div>

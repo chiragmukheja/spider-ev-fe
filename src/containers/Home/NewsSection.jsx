@@ -34,7 +34,7 @@ const categoryColors = {
 const NewsSection = () => {
   return (
     <section className="w-full bg-[#F3F5F8] py-16 lg:py-20">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
         {/* Header */}
         <motion.div
           variants={staggerContainer}

@@ -24,7 +24,7 @@ const platformCards = [
 const AppSection = () => {
   return (
     <section className="w-full bg-[#252E89] py-14 lg:py-20">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           variants={staggerContainer}
           initial="hidden"

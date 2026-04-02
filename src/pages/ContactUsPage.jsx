@@ -5,8 +5,8 @@ import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerFast, viewport } 
 import heroBg from "../assets/home/hero-bg.png";
 
 const contactDetails = [
-  { icon: "✉️", label: "Email", value: "info@spiderev.in" },
-  { icon: "📞", label: "Phone", value: "+91 1800-XXX-XXXX" },
+  { icon: "✉️", label: "Email", value: "connect@spiderenergy.in", href: "mailto:connect@spiderenergy.in" },
+  { icon: "💬", label: "WhatsApp", value: "+91 9997776080", href: "https://wa.me/919997776080" },
   { icon: "📍", label: "Address", value: "SpiderEV, Vadodara, Gujarat, India" },
   { icon: "🕐", label: "Support Hours", value: "Mon–Sat: 9:00 AM – 6:00 PM IST" },
 ];
@@ -20,7 +20,7 @@ const ContactUsPage = () => {
       {/* Hero */}
       <section className="relative overflow-hidden py-20 sm:py-28" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />
-        <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const ContactUsPage = () => {
       </section>
 
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Contact Form */}
             <motion.div
@@ -119,7 +119,10 @@ const ContactUsPage = () => {
                     </div>
                     <div>
                       <div className="text-sm text-gray-500 font-medium">{item.label}</div>
-                      <div className="text-gray-900 font-semibold mt-0.5">{item.value}</div>
+                      {item.href
+                        ? <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="text-primary font-semibold mt-0.5 hover:underline block">{item.value}</a>
+                        : <div className="text-gray-900 font-semibold mt-0.5">{item.value}</div>
+                      }
                     </div>
                   </motion.div>
                 ))}

@@ -31,7 +31,7 @@ const GalleryPage = () => {
     <PageLayout>
       <section className="relative overflow-hidden py-16 sm:py-20" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />
-        <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="relative max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ const GalleryPage = () => {
       </section>
 
       <section className="py-12 sm:py-16 bg-gray-50">
-        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           {/* Filter */}
           <motion.div
             variants={staggerFast}

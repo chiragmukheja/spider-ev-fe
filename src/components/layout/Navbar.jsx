@@ -32,7 +32,7 @@ const directLinks = [
   { label: "BESS", href: "/bess" },
   { label: "ROI", href: "/roi", newTab: true },
   { label: "Stations", href: "/charge-locator" },
-  { label: "News", href: "/news" },
+  // { label: "News", href: "/news" },
 ];
 
 const DropdownMenu = ({ items }) => (
