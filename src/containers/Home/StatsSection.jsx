@@ -66,7 +66,7 @@ const StatsSection = () => {
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8">
             <Link
-              to="/company/about"
+              to="/about-us"
               className="text-[#2f3236] underline underline-offset-2 font-semibold hover:text-black transition-colors"
             >
               know more

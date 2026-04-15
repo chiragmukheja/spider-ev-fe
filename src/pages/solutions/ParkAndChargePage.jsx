@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
 import SpiderConnectCTA from "../../components/ui/SpiderConnectCTA";
@@ -16,8 +17,12 @@ const customers = ["Malls", "Hotels", "Office Parks", "Restaurants", "Hospitals"
 const ParkAndChargePage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Park and Charge EV Stations in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Spider Energy Provides Top Park & Charge Electric Vehicle Stations in Andhra Pradesh(AP) and Telangana(TG), with Easy Installation & Best Parking Solutions for EVs." />
+      </Helmet>
       <HeroBanner
-        title="Park & Charge — Turn Your Business Into a Destination"
+        title="Park and Charge EV Stations in Telangana & Andhra Pradesh"
         subtitle="Give your customers the gift of convenient EV charging while they shop, dine, or work."
         bgImage={parkImg}
       />
@@ -34,16 +39,16 @@ const ParkAndChargePage = () => {
             >
               <motion.span variants={fadeUp} className="text-secondary font-semibold text-sm uppercase tracking-wider">The Opportunity</motion.span>
               <motion.h2 variants={fadeUp} className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-                EV drivers need reliable charging — wherever they go
+                Turn Every Location Into a Charging Hub
               </motion.h2>
               <motion.p variants={fadeUp} className="mt-5 text-gray-600 text-lg leading-relaxed">
-                With EV adoption in India surging past 44% CAGR, your customers are increasingly arriving
-                in electric vehicles. They choose destinations that can charge their car while they're inside.
+                EV adoption is accelerating — and drivers are choosing destinations that power their journey.
               </motion.p>
               <motion.p variants={fadeUp} className="mt-4 text-gray-600 leading-relaxed">
-                Turn your business into a go-to destination with SpiderEV's Park & Charge solution —
-                attracting and retaining EV drivers while increasing customer dwell time and creating a
-                new revenue stream.
+                Transform your property into a high-demand charging destination. Drive premium EV footfall,
+                increase customer dwell time, and unlock recurring revenue — all built on Spider EV's
+                high-performance charging and intelligent software, delivering uptime, real-time monitoring,
+                and seamless operations at scale.
               </motion.p>
             </motion.div>
             <motion.div

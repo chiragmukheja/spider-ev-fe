@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
 import SpiderConnectCTA from "../../components/ui/SpiderConnectCTA";
@@ -24,8 +25,12 @@ const features = [
 const PublicChargingPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Public EV Charging Stations in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Spider Energy offers Public EV Charging Stations in Andhra Pradesh and Telangana, Delivering Fast Charging for Cars with a Strong & Connected EV Charging Network." />
+      </Helmet>
       <HeroBanner
-        title="Public Charging Infrastructure — Built for Scale"
+        title="Public EV Charging Stations in Telangana & Andhra Pradesh"
         subtitle="Deliver dependable service with our Charger Management System, ensuring seamless reliability for cities and highways."
         bgImage={highwayImg}
       />
@@ -42,17 +47,18 @@ const PublicChargingPage = () => {
             >
               <motion.span variants={fadeUp} className="text-secondary font-semibold text-sm uppercase tracking-wider">Public Infrastructure</motion.span>
               <motion.h2 variants={fadeUp} className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-                Powering India's EV Network — One Station at a Time
+                Powering India's EV Network — At Scale
               </motion.h2>
               <motion.p variants={fadeUp} className="mt-5 text-gray-600 text-lg leading-relaxed">
-                India needs 400,000+ public charging stations by 2030. SpiderEV partners with city
-                governments, highway authorities, fuel station operators, and commercial landlords to
-                deploy reliable public charging infrastructure at scale.
+                India's EV future demands infrastructure that is reliable, accessible, and built to scale.
+                Spider EV partners with governments, highways, fuel stations, and commercial hubs to deploy
+                high-performance public charging networks where they're needed most.
               </motion.p>
               <motion.p variants={fadeUp} className="mt-4 text-gray-600 leading-relaxed">
-                Our end-to-end approach — from site identification and EPC works to ongoing software
-                management via Spider Connect — ensures your public charging network runs 24/7 with
-                minimal downtime.
+                From site identification to deployment and operations, Spider EV manages the complete
+                lifecycle of public charging infrastructure. With integrated software and real-time monitoring
+                via Spider Connect, every station is optimized for performance — ensuring your network runs
+                24/7 with minimal downtime.
               </motion.p>
             </motion.div>
             <motion.div
@@ -114,7 +120,7 @@ const PublicChargingPage = () => {
               viewport={viewport}
               className="rounded-2xl overflow-hidden shadow-lg"
             >
-              <img src={highwayImg} alt="Highway Charging" className="w-full h-80 object-cover" />
+              <img src={publicImg} alt="Highway Charging" className="w-full h-80 object-cover" />
             </motion.div>
             <motion.div
               variants={staggerContainer}

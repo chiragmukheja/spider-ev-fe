@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { fadeLeft, fadeRight, fadeUp, staggerContainer, viewport } from "../../utils/animationConfig";
-import spiderConnectImg from "../../assets/home/SpiderConnect.jpg";
+import spiderConnectImg from "../../assets/home/SpiderConnect.png";
 
 const SpiderConnectCTA = () => (
   <section className="bg-gray-50 py-16 sm:py-20">
@@ -47,7 +47,7 @@ const SpiderConnectCTA = () => (
           </motion.ul>
           <motion.div variants={fadeUp}>
             <Link
-              to="/solutions/spider-connect"
+              to="/cpms-ev-charging-point-management-system"
               className="mt-8 inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
             >
               Know More

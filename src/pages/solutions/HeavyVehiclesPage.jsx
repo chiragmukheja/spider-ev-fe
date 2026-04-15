@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
 import SpiderConnectCTA from "../../components/ui/SpiderConnectCTA";
@@ -21,8 +22,12 @@ const featuredProducts = [
 const HeavyVehiclesPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Heavy Duty EV Charging Stations in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Spider Energy Provides Heavy Duty EV Charging Stations in AP & Telangana for Trucks, Buses & Fleets, with EV Charging Infrastructure & Electric Vehicle Charging Solutions." />
+      </Helmet>
       <HeroBanner
-        title="Heavy Vehicle Charging — Power for the Long Haul"
+        title="Heavy Duty EV Charging Stations in Telangana & Andhra Pradesh"
         subtitle="Electrify your heavy-duty fleet with powerful charging systems built for optimal performance, rapid charging, and maximum efficiency."
         bgImage={fleetImg}
       />

@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../components/layout/PageLayout";
 import HeroBanner from "../components/ui/HeroBanner";
 import Accordion from "../components/ui/Accordion";
 import SpiderConnectCTA from "../components/ui/SpiderConnectCTA";
 import { fadeUp, fadeLeft, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
 import dcChargerImg from "../assets/home/DcCharger.png";
-import tejImg from "../assets/chargers/tej.png";
-import sparkDcImg from "../assets/chargers/spark-dc.png";
+import sparkDcImg from "../assets/chargers/spark.jpeg";
+import surgeDcImg from "../assets/chargers/surge.jpeg";
 
 const cardImages = {
-  "spider-base":  tejImg,
   "spider-spark": sparkDcImg,
+  "spider-surge": surgeDcImg,
 };
 
 const dcProducts = [
-  { id: "spider-base",   name: "Spider Base",   power: "3 – 12 kW", connector: "Type 6 (IS 17017-2-6)", outputVoltage: "20 – 120 V DC",   outputCurrent: "0 – 100 A" },
-  { id: "spider-spark",  name: "Spider Spark",  power: "15 kW",     connector: "GB/T",                  outputVoltage: "40 – 200 V DC",   outputCurrent: "0 – 200 A" },
-  { id: "spider-fast",   name: "Spider Fast",   power: "30 kW",     connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 100 A" },
-  { id: "spider-falcon", name: "Spider Falcon", power: "60 kW",     connector: "CCS2",                  outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 100 A" },
-  { id: "spider-hulk",   name: "Spider Hulk",   power: "120 kW",    connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 200 A" },
-  { id: "spider-ultra",  name: "Spider Ultra",  power: "240 kW",    connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 250 A" },
+  { id: "spider-spark",  name: "Spider Spark",  power: "60 kW",     connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 150 A" },
+  { id: "spider-ultra",  name: "Spider Ultra",  power: "120 kW",    connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 200 A" },
+  { id: "spider-surge",  name: "Spider Surge",  power: "180 kW",    connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 250 A" },
+  { id: "spider-hulk",   name: "Spider Hulk",   power: "240 kW",    connector: "CCS2 / CHAdeMO",        outputVoltage: "200 – 1000 V DC", outputCurrent: "0 – 350 A" },
+  
 ];
 
 const faqItems = [
@@ -84,8 +84,12 @@ const ProductCard = ({ product }) => {
 const DCChargersPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>DC Fast EV Charging Stations in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Explore top DC Fast Electric Vehicle Chargers in Andhra Pradesh (AP) & Telangana (TG). Spider Energy Provides Reliable and Smart EV Charging Solutions for Vehicles." />
+      </Helmet>
       <HeroBanner
-        title="DC Fast Chargers for Electric Vehicles"
+        title="DC Fast EV Charging Stations in Telangana & Andhra Pradesh"
         subtitle="Deliver exceptional power and energy efficiency — rapid charging for personal EVs and heavy-duty vehicles."
         bgImage={dcChargerImg}
       />
@@ -138,7 +142,7 @@ const DCChargersPage = () => {
             className="mb-10 text-center"
           >
             <motion.h2 variants={fadeUp} className="text-3xl font-bold text-gray-900">Our DC Charger Range</motion.h2>
-            <motion.p variants={fadeUp} className="text-gray-500 mt-2">6 models — from 3 kW to 240 kW</motion.p>
+            <motion.p variants={fadeUp} className="text-gray-500 mt-2">4 models — from 60 kW to 240 kW</motion.p>
           </motion.div>
           <motion.div
             variants={staggerFast}

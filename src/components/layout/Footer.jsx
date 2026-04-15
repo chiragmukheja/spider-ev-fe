@@ -20,18 +20,18 @@ const dcProducts = [
 ];
 
 const solutions = [
-  { label: "Park & Charge", href: "/solutions/park-and-charge" },
-  { label: "Community Charging", href: "/solutions/community-charging" },
-  { label: "Public Charging", href: "/solutions/public-charging" },
-  { label: "Heavy Vehicles", href: "/solutions/heavy-vehicles" },
-  { label: "CPMS (Spider Connect)", href: "/solutions/spider-connect" },
-  { label: "Mobile App (SpiderEV)", href: "/solutions/spiderev-app" },
-  { label: "EPC Works", href: "/solutions/epc-works" },
+  { label: "Park & Charge", href: "/park-and-charge-electric-vehicle-ev-charging-station" },
+  { label: "Community Charging", href: "/community-ev-charging-stations" },
+  { label: "Public Charging", href: "/public-ev-charging-stations" },
+  { label: "Heavy Vehicles", href: "/heavy-duty-ev-charging-station" },
+  { label: "CPMS (Spider Connect)", href: "/cpms-ev-charging-point-management-system" },
+  { label: "Mobile App (SpiderEV)", href: "/ev-charging-station-app" },
+  { label: "EPC Works", href: "/ev-charging-epc-services" },
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "/company/about" },
-  { label: "Contact Us", href: "/company/contact" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Contact Us", href: "/contact-us" },
   { label: "Blog", href: "/blog" },
   { label: "News", href: "/news" },
   { label: "Gallery", href: "/gallery" },

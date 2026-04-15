@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../components/layout/PageLayout";
 import HeroBanner from "../components/ui/HeroBanner";
 import Accordion from "../components/ui/Accordion";
@@ -74,8 +75,12 @@ const ProductCard = ({ product }) => (
 const ACChargersPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Electric Vehicle AC Charging Station in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Explore the Best EV AC Charging Stations in Andhra Pradesh (AP) and Telangana (TG) for Efficient Home EV Charging and Reliable Electric Car Charger Solutions." />
+      </Helmet>
       <HeroBanner
-        title="Intelligent AC Chargers for Home EV Charging"
+        title="Electric Vehicle AC Charging Station in Telangana & Andhra Pradesh"
         subtitle="From compact home chargers to high-power commercial units — engineered for India."
         bgImage={acChargerImg}
       />

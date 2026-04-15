@@ -29,7 +29,7 @@ const heroSlides = [
     subtitleAccent: "Fastest Growing",
     subtitleSuffix: "EV Charging Infrastructure Network",
     cta: "Explore Solutions",
-    ctaHref: "/solutions/park-and-charge",
+    ctaHref: "/park-and-charge-electric-vehicle-ev-charging-station",
     image: heroImage2,
   },
   {
@@ -40,7 +40,7 @@ const heroSlides = [
     subtitleAccent: "India's",
     subtitleSuffix: "Rapidly Expanding EV Charging Network.",
     cta: "Get Started",
-    ctaHref: "/company/contact",
+    ctaHref: "/contact-us",
     image: heroImage3,
   },
 ];

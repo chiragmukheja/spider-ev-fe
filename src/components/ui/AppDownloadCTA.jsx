@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeRight, fadeUp, staggerContainer, viewport } from "../../utils/animationConfig";
 import AppStoreButtons from "./AppStoreButtons";
-import appImg from "../../assets/home/SpiderApp.jpg";
+import appImg from "../../assets/home/SpiderApp.png";
 import heroBg from "../../assets/home/hero-bg.png";
 
 const AppDownloadCTA = () => (

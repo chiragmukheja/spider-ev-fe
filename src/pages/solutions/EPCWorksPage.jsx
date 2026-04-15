@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
 import SpiderConnectCTA from "../../components/ui/SpiderConnectCTA";
@@ -42,8 +43,12 @@ const whyPoints = [
 const EPCWorksPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>EV Charging Station Installation Service in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="We provides EV charging station installation in Andhra Pradesh & Telangana with EPC services, construction support & infrastructure solutions for commercial and public spaces." />
+      </Helmet>
       <HeroBanner
-        title="EPC Works — Turnkey EV Charging Infrastructure"
+        title="EV Charging Station Installation Service in Telangana & Andhra Pradesh"
         subtitle="Engineering, Procurement, and Construction — end-to-end EV charging solutions designed, procured, and installed by our expert team."
         bgImage={workplaceImg}
       />

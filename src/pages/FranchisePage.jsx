@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 // ─── Assets ──────────────────────────────────────────────────────────────────
 import logo from "../assets/home/spider-ev-logo.png";
@@ -404,6 +405,10 @@ const FranchiseForm = () => {
 export default function FranchisePage() {
   return (
     <div className="min-h-screen bg-white font-sans antialiased">
+      <Helmet>
+        <title>EV Charging Station Franchise in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Start your EV Charging Franchise in Andhra Pradesh and Telangana with Dealership Support, Profitable Franchise Setup Plans and Trusted Franchise Company Guidance." />
+      </Helmet>
 
       {/* ═══════════════════════════════════════════
           NAVBAR
@@ -435,7 +440,7 @@ export default function FranchisePage() {
           {/* Left text */}
           <motion.div variants={stagger} initial="hidden" animate="visible" className="pt-2 lg:pt-6">
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-[58px] font-extrabold text-white leading-[1.08] mb-5 tracking-tight">
-              Build the Future<br />of E-Mobility
+              EV Charging Station Franchise in Telangana & Andhra Pradesh
             </motion.h1>
             <motion.p variants={fadeUp} className="text-white/55 text-lg leading-relaxed mb-9 max-w-md">
               Be a franchise partner with SpiderEV — India's growing EV charging network. Starting at just <span className="text-white font-semibold">₹30 Lakhs*</span>

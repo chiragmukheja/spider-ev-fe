@@ -17,49 +17,49 @@ const chargingSlides = [
     description:
       "Turn your business into a go-to destination with reliable, easy-to-use charging stations that attract and retain EV drivers.",
     imageUrl: parkAndChargeImg,
-    href: "/solutions/park-and-charge",
+    href: "/park-and-charge-electric-vehicle-ev-charging-station",
   },
   {
     title: "Community Charging",
     description:
       "Transform your neighborhood into a vibrant EV-friendly community with convenient, on-site charging.",
     imageUrl: communityChargingImg,
-    href: "/solutions/community-charging",
+    href: "/community-ev-charging-stations",
   },
   {
     title: "Public Charging",
     description:
       "Deliver dependable service with our Charger Management System, ensuring effortless integration and seamless reliability.",
     imageUrl: publicChargingImg,
-    href: "/solutions/public-charging",
+    href: "/public-ev-charging-stations",
   },
   {
     title: "Fleet Charging",
     description:
       "Support your commercial fleet with high-uptime charging infrastructure built for daily heavy usage.",
     imageUrl: fleetChargingImg,
-    href: "/solutions/heavy-vehicles",
+    href: "/heavy-duty-ev-charging-station",
   },
   {
     title: "Destination Charging",
     description:
       "Add premium EV charging to malls, hotels, and campuses for longer stays and better customer experience.",
     imageUrl: destinationChargingImg,
-    href: "/solutions/park-and-charge",
+    href: "/park-and-charge-electric-vehicle-ev-charging-station",
   },
   {
     title: "Highway Charging",
     description:
       "Keep long-distance drivers moving with strategically placed charging hubs on major highway routes.",
     imageUrl: highwayChargingImg,
-    href: "/charge-locator",
+    href: "/ev-charging-station-locator",
   },
   {
     title: "Workplace Charging",
     description:
       "Enable employees and visitors to charge reliably at office campuses with smart energy management.",
     imageUrl: workplaceChargingImg,
-    href: "/solutions/epc-works",
+    href: "/ev-charging-epc-services",
   },
 ];
 

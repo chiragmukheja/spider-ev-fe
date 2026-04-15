@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import logo from "../assets/home/spider-ev-logo.png";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
 
@@ -72,6 +73,10 @@ const ROIPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Minimal Navbar */}
+      <Helmet>
+        <title>EV Charging Station ROI Calculator in Andhra Pradesh & Telangana</title>
+        <meta name="description" content="Find Best Estimate EV Charging Business Profits in Andhra Pradesh and Telangana Using Smart Revenue and ROI Calculators for Accurate Charging Station Investment Planning." />
+      </Helmet>
       <nav className="bg-white border-b border-gray-100 px-4 sm:px-8 py-4 flex items-center justify-center sticky top-0 z-40 shadow-sm">
         <Link to="/">
           <img src={logo} alt="SpiderEV" className="h-10 w-auto" />
@@ -87,7 +92,7 @@ const ROIPage = () => {
           className="text-center mb-12"
         >
           <motion.h1 variants={fadeUp} className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-            EV Charger ROI Calculator
+            EV Charging Station ROI Calculator in Andhra Pradesh & Telangana
           </motion.h1>
           <motion.p variants={fadeUp} className="text-gray-500 mt-3 max-w-2xl mx-auto">
             Model your investment returns from EV charging infrastructure. Adjust parameters and get real-time profit projections.
@@ -234,7 +239,7 @@ const ROIPage = () => {
             </button>
 
             <Link
-              to="/franchise"
+              to="/ev-charging-station-franchise"
               className="block w-full text-center bg-primary text-white py-4 rounded-2xl font-bold hover:bg-primary/90 transition-colors"
             >
               Get Started with SpiderEV →

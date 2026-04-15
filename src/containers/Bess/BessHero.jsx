@@ -78,8 +78,8 @@ const BessHero = () => {
                 transition={{ delay: 0.25, duration: 0.7 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight"
               >
-                Power That Never{" "}
-                <span className="text-secondary">Lets You Down</span>
+                BESS EV Charging Station Solution{" "}
+                <span className="text-secondary">in Andhra Pradesh & Telangana</span>
               </motion.h1>
 
               <motion.p

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -191,6 +192,10 @@ const ChargeLocatorPage = () => {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>EV Charging Station Locator in Andhra Pradesh & Telangana</title>
+        <meta name="description" content="Find Nearby EV Fast Charging Stations in Andhra Pradesh and Telangana using a Smart EV Charge Zone Locator and Real-time EV Charging Locator Tools." />
+      </Helmet>
       {/* Header */}
       <section
         className="relative overflow-hidden py-16 sm:py-20"
@@ -204,7 +209,7 @@ const ChargeLocatorPage = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-4xl sm:text-5xl font-bold text-white"
           >
-            Find a Charging Station
+            EV Charging Station Locator in Andhra Pradesh & Telangana
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { fadeUp, staggerContainer } from "../../utils/animationConfig";
-import spiderConnectImg from "../../assets/home/SpiderConnect.jpg";
-import spiderAppImg from "../../assets/home/SpiderApp.jpg";
+import spiderConnectImg from "../../assets/home/SpiderConnect.png";
+import spiderAppImg from "../../assets/home/SpiderApp.png";
 
 const platformCards = [
   {
@@ -10,14 +10,14 @@ const platformCards = [
     description:
       "Keep your chargers at your command. Easily monitor, schedule, and adjust power usage remotely from any device.",
     imageUrl: spiderConnectImg,
-    href: "/solutions/spider-connect",
+    href: "/cpms-ev-charging-point-management-system",
   },
   {
     title: "Spider App",
     description:
       "Charging your EV is as easy as Scan, Charge, Pay-a seamless experience that lets you power up quickly and pay effortlessly.",
     imageUrl: spiderAppImg,
-    href: "/solutions/spiderev-app",
+    href: "/ev-charging-station-app",
   },
 ];
 

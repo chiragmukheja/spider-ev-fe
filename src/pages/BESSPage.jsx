@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../components/layout/PageLayout";
 import BessHero from "../containers/Bess/BessHero";
 import BessIntro from "../containers/Bess/BessIntro";
@@ -24,6 +25,10 @@ const BESSPage = () => {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>BESS EV Charging Station Solution in Andhra Pradesh & Telangana</title>
+        <meta name="description" content="Explore Smart EV Charging Energy Storage Solutions in Andhra Pradesh and Telangana with Solar Powered Station Setups, Renewable Charging & Battery Backup Systems." />
+      </Helmet>
       <BessHero />
       <BessIntro />
       <BessPillars />

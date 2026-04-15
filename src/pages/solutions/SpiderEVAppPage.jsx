@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
 import AppStoreButtons from "../../components/ui/AppStoreButtons";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../../utils/animationConfig";
-import appImg from "../../assets/home/SpiderApp.jpg";
+import appImg from "../../assets/home/SpiderApp.png";
 import heroBg from "../../assets/home/hero-bg.png";
 
 const appFeatures = [
@@ -21,8 +22,12 @@ const appFeatures = [
 const SpiderEVAppPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>EV Charging Station App in Andhra Pradesh & Telangana</title>
+        <meta name="description" content="Discover a Smart EV Charging App in Andhra Pradesh and Telangana to Locate Nearby Stations, Access Charging Networks and Manage Your EV Charging Anytime, Anywhere." />
+      </Helmet>
       <HeroBanner
-        title="SpiderEV App — Scan, Charge, Pay"
+        title="EV Charging Station App in Andhra Pradesh & Telangana"
         subtitle="Find EV charging stations near you. A seamless experience that lets you power up quickly and pay effortlessly."
         bgImage={appImg}
       />

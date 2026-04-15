@@ -6,13 +6,13 @@ import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, vi
 import acImg from "../assets/home/AcCharger.jpeg";
 import dcImg from "../assets/home/DcCharger.png";
 import heroBg from "../assets/home/hero-bg.png";
-import tejImg from "../assets/chargers/tej.png";
-import sparkDcImg from "../assets/chargers/spark-dc.png";
+import sparkDcImg from "../assets/chargers/spark.jpeg";
+import surgeDcImg from "../assets/chargers/surge.jpeg";
 
 // Per-product image overrides (DC only; AC all use acImg)
 const productImages = {
-  "spider-base":  tejImg,
   "spider-spark": sparkDcImg,
+  "spider-surge": surgeDcImg,
 };
 
 const productData = {
@@ -176,13 +176,13 @@ const productData = {
     },
     "spider-spark": {
       name: "Spider Spark",
-      tagline: "15 kW DC fast charger with GB/T connector and wide output voltage range",
-      power: "15 kW",
-      connector: "GB/T",
+      tagline: "60 kW DC fast charger with CCS2 / CHAdeMO for public and commercial charging",
+      power: "60 kW",
+      connector: "CCS2 / CHAdeMO",
       inputVoltage: "415 V AC, Three Phase",
       operatingVoltage: "—",
-      outputVoltage: "40 – 200 V DC",
-      outputCurrent: "0 – 200 A",
+      outputVoltage: "200 – 1000 V DC",
+      outputCurrent: "0 – 150 A",
       ipRating: "IP67",
       certifications: "BIS Certified",
       ocpp: "OCPP 1.6J",
@@ -245,7 +245,30 @@ const productData = {
     },
     "spider-hulk": {
       name: "Spider Hulk",
-      tagline: "120 kW powerhouse DC charger for fleets, highways, and heavy vehicles",
+      tagline: "240 kW ultra-rapid DC charger — the peak of SpiderEV's charging technology",
+      power: "240 kW",
+      connector: "CCS2 / CHAdeMO",
+      inputVoltage: "415 V AC, Three Phase",
+      operatingVoltage: "—",
+      outputVoltage: "200 – 1000 V DC",
+      outputCurrent: "0 – 350 A",
+      ipRating: "IP67",
+      certifications: "BIS Certified",
+      ocpp: "OCPP 1.6J",
+      features: [
+        "Short Circuit Prevention",
+        "Over Current Prevention",
+        "Voltage Surge Protection",
+        "Overheat Protection",
+        "Ground Fault Protection",
+        "Auto Power Cut-off",
+        "Over / Under Voltage Protection",
+        "RFID & App Authentication",
+      ],
+    },
+    "spider-ultra": {
+      name: "Spider Ultra",
+      tagline: "120 kW high-speed DC charger for public networks, fleets, and commercial hubs",
       power: "120 kW",
       connector: "CCS2 / CHAdeMO",
       inputVoltage: "415 V AC, Three Phase",
@@ -266,10 +289,10 @@ const productData = {
         "RFID & App Authentication",
       ],
     },
-    "spider-ultra": {
-      name: "Spider Ultra",
-      tagline: "240 kW ultra-rapid DC charger — the peak of SpiderEV's charging technology",
-      power: "240 kW",
+    "spider-surge": {
+      name: "Spider Surge",
+      tagline: "180 kW rapid DC charger delivering powerful charge for highways and depots",
+      power: "180 kW",
       connector: "CCS2 / CHAdeMO",
       inputVoltage: "415 V AC, Three Phase",
       operatingVoltage: "—",
@@ -315,7 +338,7 @@ const ProductDetailPage = () => {
       <PageLayout>
         <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Product Not Found</h1>
-          <Link to={`/products/${category === "ac" ? "ac-chargers" : "dc-chargers"}`} className="bg-primary text-white px-6 py-3 rounded-xl font-semibold">
+          <Link to={`${category === "ac" ? "/electric-vehicle-ev-ac-charger" : "/electric-vehicle-ev-dc-charger"}`} className="bg-primary text-white px-6 py-3 rounded-xl font-semibold">
             Back to {category === "ac" ? "AC" : "DC"} Chargers
           </Link>
         </div>
@@ -440,7 +463,7 @@ const ProductDetailPage = () => {
       >
         <div className="max-w-330 mx-auto px-4 sm:px-6 lg:px-10">
           <Link
-            to={`/products/${category === "ac" ? "ac-chargers" : "dc-chargers"}`}
+            to={`${category === "ac" ? "/electric-vehicle-ev-ac-charger" : "/electric-vehicle-ev-dc-charger"}`}
             className="inline-block border-2 border-primary text-primary px-8 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors"
           >
             ← View All {category === "ac" ? "AC" : "DC"} Chargers

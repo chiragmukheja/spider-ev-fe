@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
 import AppDownloadCTA from "../../components/ui/AppDownloadCTA";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../../utils/animationConfig";
-import connectImg from "../../assets/home/SpiderConnect.jpg";
+import connectImg from "../../assets/home/SpiderConnect.png";
 import heroBg from "../../assets/home/hero-bg.png";
 
 const features = [
@@ -24,8 +25,12 @@ const steps = [
 const SpiderConnectPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>EV Charging Management System in Andhra Pradesh & Telangana</title>
+        <meta name="description" content="Explore Smart EV Charging Solutions in Andhra Pradesh and Telangana with Advanced Platforms and Efficient Network Management for Seamless Charging Operations." />
+      </Helmet>
       <HeroBanner
-        title="Spider Connect — Your EV Charger Operating System"
+        title="EV Charging Management System in Andhra Pradesh & Telangana"
         subtitle="An advanced cloud-based platform to deploy, manage, and expand your EV charging network from anywhere."
         bgImage={connectImg}
       />

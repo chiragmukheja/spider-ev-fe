@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../../components/layout/PageLayout";
 import HeroBanner from "../../components/ui/HeroBanner";
 import SpiderConnectCTA from "../../components/ui/SpiderConnectCTA";
@@ -39,8 +40,12 @@ const pillars = [
 const CommunityChargingPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Community EV Charging Stations in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Spider Energy Provides Community EV Charging Stations in Andhra Pradesh (AP) & Telangana(TG) for Apartments and Housing Societies with Residential Charging Solutions." />
+      </Helmet>
       <HeroBanner
-        title="Community Charging — EV-Ready Homes for Everyone"
+        title="Community EV Charging Stations in Telangana & Andhra Pradesh"
         subtitle="Transform your neighborhood into a vibrant EV-friendly community with convenient on-site charging."
         bgImage={communityImg}
       />
@@ -66,17 +71,24 @@ const CommunityChargingPage = () => {
             >
               <motion.span variants={fadeUp} className="text-secondary font-semibold text-sm uppercase tracking-wider">Residential Solutions</motion.span>
               <motion.h2 variants={fadeUp} className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-                Bring EV Charging to Your Apartment Complex
+                Powering Modern Communities
               </motion.h2>
               <motion.p variants={fadeUp} className="mt-5 text-gray-600 text-lg leading-relaxed">
-                As India's EV fleet grows rapidly, residents in apartments and gated communities need
-                convenient, reliable charging right at home. SpiderEV makes it easy to deploy a fully
-                managed charging network in your society — increasing property value and attracting
-                EV-conscious residents.
+                As EV adoption grows, residents expect charging where they live. Spider EV brings reliable,
+                accessible charging directly into apartments and gated communities — making EV ownership seamless.
               </motion.p>
               <motion.p variants={fadeUp} className="mt-4 text-gray-600 leading-relaxed">
-                Our end-to-end solution handles everything from site survey and installation to ongoing
-                maintenance and software management via Spider Connect.
+                We go beyond installing chargers. Spider EV designs structured, scalable systems that support
+                both cars and two-wheelers, with smart load management to ensure efficient use of shared power.
+              </motion.p>
+              <motion.p variants={fadeUp} className="mt-4 text-gray-600 leading-relaxed">
+                Every charger is connected through an integrated platform that enables real-time monitoring,
+                seamless access, and automated billing — delivering a smooth experience for residents and
+                complete visibility for property managers.
+              </motion.p>
+              <motion.p variants={fadeUp} className="mt-4 text-gray-600 leading-relaxed">
+                From planning and installation to ongoing operations, we handle everything — so your community
+                gets a future-ready charging network without the complexity.
               </motion.p>
             </motion.div>
           </div>

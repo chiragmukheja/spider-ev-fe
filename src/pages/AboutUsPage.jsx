@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../components/layout/PageLayout";
 import HeroBanner from "../components/ui/HeroBanner";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
@@ -29,8 +30,12 @@ const partners = [
 const AboutUsPage = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>EV Charger Manufacturing Company in Telangana & Andhra Pradesh</title>
+        <meta name="description" content="Discover EV Charging Systems Manufacturers in Andhra Pradesh and Telangana Offering Electric Car Chargers, EV Home Charger Installation & EV Charging Equipment." />
+      </Helmet>
       <HeroBanner
-        title="Enabling the transition to Electric Vehicles through top-notch charging infrastructure."
+        title="EV Charger Manufacturing Company in Telangana & Andhra Pradesh"
         bgImage={heroBg}
       />
 
