@@ -12,6 +12,7 @@ import BessFeatures from "../containers/Bess/BessFeatures";
 import BessAppSection from "../containers/Bess/BessAppSection";
 import BessFAQ from "../containers/Bess/BessFAQ";
 import BessEnquiry from "../containers/Bess/BessEnquiry";
+import BessHowItWorks from "../containers/Bess/BessHowItWorks";
 
 const BESSPage = () => {
   const [activeSpecProduct, setActiveSpecProduct] = useState("spidervault-3");
@@ -32,6 +33,7 @@ const BESSPage = () => {
       <BessHero />
       <BessIntro />
       <BessPillars />
+      <BessHowItWorks />
       <BessCapacitySelector onProductSelect={handleProductSelect} />
       <BessProductTabs onProductSelect={handleProductSelect} />
       <BessSpecsTabs activeProduct={activeSpecProduct} onTabChange={setActiveSpecProduct} />
