@@ -10,11 +10,8 @@ import acChargerImg from "../assets/home/AcCharger.jpeg";
 
 const acProducts = [
   { id: "spider-mini",   name: "Spider Mini",   power: "3.3 kW", connector: "IEC 60309",  phase: "Single Phase", current: "16 A",      ocpp: true },
-  { id: "spider-lite",   name: "Spider Lite",   power: "3.3 kW", connector: "IEC 60309",  phase: "Single Phase", current: "16 A",      ocpp: true },
   { id: "spider-smart",  name: "Spider Smart",  power: "7.4 kW", connector: "Type 2",     phase: "Single Phase", current: "32 A",      ocpp: true },
   { id: "spider-blaze",  name: "Spider Blaze",  power: "22 kW",  connector: "Type 2",     phase: "Three Phase",  current: "32 A",      ocpp: true },
-  { id: "spider-strike", name: "Spider Strike", power: "40 kW",  connector: "Type 2",     phase: "Three Phase",  current: "55 A",      ocpp: true },
-  { id: "spider-dash",   name: "Spider Dash",   power: "80 kW",  connector: "Type 2",     phase: "Three Phase",  current: "55 A/gun",  ocpp: true },
 ];
 
 const faqItems = [
@@ -134,7 +131,7 @@ const ACChargersPage = () => {
             className="mb-10 text-center"
           >
             <motion.h2 variants={fadeUp} className="text-3xl font-bold text-gray-900">Our AC Charger Range</motion.h2>
-            <motion.p variants={fadeUp} className="text-gray-500 mt-2">6 models — from 3.3 kW to 80 kW</motion.p>
+            <motion.p variants={fadeUp} className="text-gray-500 mt-2">3 models — from 3.3 kW to 22 kW</motion.p>
           </motion.div>
           <motion.div
             variants={staggerFast}

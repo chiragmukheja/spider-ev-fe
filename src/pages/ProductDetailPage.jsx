@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../components/layout/PageLayout";
 import AppDownloadCTA from "../components/ui/AppDownloadCTA";
 import { fadeUp, fadeLeft, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
@@ -8,10 +9,12 @@ import dcImg from "../assets/home/DcCharger.png";
 import heroBg from "../assets/home/hero-bg.png";
 import sparkDcImg from "../assets/chargers/spark.jpeg";
 import surgeDcImg from "../assets/chargers/surge.jpeg";
+import ultraDcImg from "../assets/chargers/ultra.jpeg";
 
 // Per-product image overrides (DC only; AC all use acImg)
 const productImages = {
   "spider-spark": sparkDcImg,
+  "spider-ultra": ultraDcImg,
   "spider-surge": surgeDcImg,
 };
 
@@ -346,8 +349,14 @@ const ProductDetailPage = () => {
     );
   }
 
+  const typeLabel = category === "ac" ? "AC EV Charger" : "DC Fast EV Charger";
+
   return (
     <PageLayout>
+      <Helmet>
+        <title>{product.name} — {product.power} {typeLabel} | SpiderEV</title>
+        <meta name="description" content={product.tagline} />
+      </Helmet>
       {/* Hero */}
       <section className="relative overflow-hidden py-16 sm:py-24" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />

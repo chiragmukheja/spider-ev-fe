@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../components/layout/PageLayout";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
 import heroBg from "../assets/home/hero-bg.png";
@@ -28,6 +29,10 @@ const PartnerWithUsPage = () => {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Partner With SpiderEV — EV Charging Opportunities in India</title>
+        <meta name="description" content="Partner with SpiderEV as a site owner, fleet operator, fuel station or real estate developer. Build India's EV charging future together." />
+      </Helmet>
       {/* Hero */}
       <section className="relative overflow-hidden py-20 sm:py-28" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />

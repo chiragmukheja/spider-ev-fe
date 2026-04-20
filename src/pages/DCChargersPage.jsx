@@ -9,9 +9,11 @@ import { fadeUp, fadeLeft, staggerContainer, staggerFast, viewport } from "../ut
 import dcChargerImg from "../assets/home/DcCharger.png";
 import sparkDcImg from "../assets/chargers/spark.jpeg";
 import surgeDcImg from "../assets/chargers/surge.jpeg";
+import ultraDcImg from "../assets/chargers/ultra.jpeg";
 
 const cardImages = {
   "spider-spark": sparkDcImg,
+  "spider-ultra": ultraDcImg,
   "spider-surge": surgeDcImg,
 };
 

@@ -8,8 +8,8 @@ import heroBg from "../assets/home/hero-bg.png";
 const contactDetails = [
   { icon: "✉️", label: "Email", value: "connect@spiderenergy.in", href: "mailto:connect@spiderenergy.in" },
   { icon: "💬", label: "WhatsApp", value: "+91 9997776080", href: "https://wa.me/919997776080" },
-  { icon: "📍", label: "Address", value: "SpiderEV, Vadodara, Gujarat, India" },
-  { icon: "🕐", label: "Support Hours", value: "Mon–Sat: 9:00 AM – 6:00 PM IST" },
+  { icon: "📍", label: "Address", value: "THub, Raidurgam, Hyderabad, India" },
+  { icon: "🕐", label: "Support Hours", value: "Mon–Sun: 24x7" },
 ];
 
 const ContactUsPage = () => {
@@ -132,7 +132,7 @@ const ContactUsPage = () => {
                   </motion.div>
                 ))}
               </motion.div>
-              <motion.div
+              {/* <motion.div
                 variants={fadeUp}
                 className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-64 bg-gray-50 flex items-center justify-center"
               >
@@ -141,7 +141,7 @@ const ContactUsPage = () => {
                   <p className="text-sm">Google Maps Embed</p>
                   <p className="text-xs mt-1">Replace with iframe embed from Google Maps</p>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "../components/layout/PageLayout";
 import { fadeUp, fadeRight, scaleUp, staggerContainer, staggerFast, viewport } from "../utils/animationConfig";
 import acImg from "../assets/home/AcCharger.jpeg";
@@ -17,6 +18,10 @@ const HarGharPage = () => {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Har Ghar Charger — Home EV Charging for Every Indian | SpiderEV</title>
+        <meta name="description" content="SpiderEV's Har Ghar Charger initiative brings affordable home EV charging to every Indian household. Register your interest and earn from your own charging station." />
+      </Helmet>
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-primary/80" />
